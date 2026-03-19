@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	Message:
+	<div>
+		<textarea name="message"></textarea>
+		<div>
+			<span id="increment">0</span> Characters
+		</div>
+		<div>
+			<span id="decrement">250</span> Characters left
+		</div>
+	</div>
+
+	<script>
+		var $box = document.querySelector('textarea');
+		$box.onkeyup = function() {
+			console.log($box.value.length);
+
+			var $chars = $box.value;
+			var $charCount = $chars.length;
+
+			var $positiveCounter = document.querySelector('#increment');
+			$positiveCounter.innerText = $charCount;
+
+			var $negativeCounter = document.querySelector('#decrement');
+			$negativeCounter.innerText = 250 - $charCount;
+		}
+	</script>
+</body>
+</html>
